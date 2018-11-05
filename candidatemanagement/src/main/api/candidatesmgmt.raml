@@ -1,0 +1,72 @@
+#%RAML 1.0
+title: Candidate Management API
+
+types:
+  CraftUsers: !include Example/craftUsersDataType.raml
+
+/users:
+  description: get all users
+  get:
+    description: retrieve users
+    responses: 
+      200: 
+       body: 
+        application/json: 
+         example: !include Example/craftUsersExample.raml
+  
+  post:
+    description: create users
+    body: 
+      application/json:
+        type: CraftUsers
+        example: !include Example/NewCraftuserNoIDSample.raml
+    responses: 
+      201:
+        body: 
+          application/json:
+            example:
+              message: New Craft user created
+  
+  put:
+      description: users updated        
+      body: 
+        application/json:
+          type: CraftUsers
+          example: !include Example/NewCraftuserNoIDSample.raml
+      responses: 
+        200:
+          body: 
+            application/json:
+              example:
+                message: Craft User Updated
+  /{ID}:
+    get:
+      queryParameters: 
+        id:
+          required: false
+      responses: 
+        200:
+          body: 
+            application/json:
+              type: CraftUsers
+              example: !include Example/CraftUserWithIDSample.raml
+    delete:
+        description: data will be deleted
+        queryParameters: 
+            id:
+              required: false
+        body: 
+          application/json:
+            type: CraftUsers
+            example: !include Example/CraftUserWithIDSample.raml
+        responses: 
+          200:
+            body: 
+              application/json:
+                example:
+                  message: User deleted
+
+
+
+
+    

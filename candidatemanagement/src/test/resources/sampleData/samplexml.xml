@@ -1,0 +1,16 @@
+<?xm.1 version="l. 0"7>
+<Claim >
+	<Policy>
+		<agent> 
+			<entity-Person> 
+				<FirstName>David</FirstName> 
+				<LastName>Damot</LastName>
+			</entity-Person> 
+			<PrimaryPhoneValue>213-457-6378</PrimaryPhoneValue>
+			<PublicID>TEST:17</PublicID>
+		</agent>
+		<PolicyNumber>S4-123456</PolicyNumber>
+	</Policy>
+</Claim>
+
+		
